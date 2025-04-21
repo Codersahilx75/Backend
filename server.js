@@ -18,10 +18,16 @@ import nodemailer from "nodemailer";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://exclusive-web-esya.vercel.app/', // ya jo tumhara frontend ka URL ho
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(bodyParser.json());
 
+PORT=5000
+MONGO_URI="mongodb+srv://username:password@cluster.mongodb.net/dbname"
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))

@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 PORT=5000
-MONGO_URI="mongodb+srv://username:password@cluster.mongodb.net/dbname"
+MONGO_URI="mongodb+srv://<db_username>:<db_password>@payment.uolyh.mongodb.net/?retryWrites=true&w=majority&appName=payment"
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
